@@ -5,14 +5,17 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
+    "msw-storybook-addon",
   ],
   framework: "@storybook/react",
   core: {
     builder: "@storybook/builder-vite",
   },
   features: {
+    interactionsDebugger: true,
     storyStoreV7: true,
   },
+  staticDirs: ["../public"],
   viteFinal: (config, { configType }) => {
     if (configType === "PRODUCTION") {
       config.base = "/ignitelab-design-system";
